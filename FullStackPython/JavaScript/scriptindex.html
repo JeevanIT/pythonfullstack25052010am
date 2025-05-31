@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with JSScript</title>
+    <script src="bsicprogram.js"></script>
+<!--     <script>
+        function chnagebgcolor() {
+            document.body.style.backgroundColor = "red";
+        }
+
+        function bgcolor2() {
+            document.body.style.backgroundColor = "blue";
+        }
+    </script> -->
+</head>
+<body>
+    <h1 id="myheading"></h1>
+    <button onclick="chnagebgcolor()">Change bgColor</button>
+     <button onclick="bgcolor2()"> bgColor</button>
+ 
+     <script>
+        const h1=document.getElementById("myheading");
+      
+        let name = "John Doe";
+        let age = 30;
+        h1.innerHTML = `Hello, my name is ${name} and I am ${age} years old.`;
+        const myobject={
+            name: "Jane Doe",
+            age: 25,
+            greet: function() {
+                return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+            }
+        }
+
+        const myarray = [1, 2, 3, 4, 5];
+        const myarray2 = [6, 7, 8, 9, 10];
+       const mergedArray = [...myarray, ...myarray2];
+        console.table(mergedArray);
+
+        console.log(myobject.greet());
+        console.log(myarray);
+        console.log(`Name: ${name}, Age: ${age}`);
+        document.write("<h1>Hello, this is a simple script example.</h1>"+name);
+        document.write(`Hello name is ${name} and age is ${age}.`);
+
+        alert("This is an alert message!"+ name);
+        confirm("Do you want to proceed?") ? console.log("User confirmed") : console.log("User cancelled");     
+        prompt("Please enter your name:") ? console.log("User entered a name") : console.log("User cancelled the prompt");
+        console.log("This is a console log message.");
+
+     </script>
+</body>
+</html>
