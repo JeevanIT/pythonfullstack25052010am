@@ -174,3 +174,50 @@ E	Manage data
 DCL	Data Control Language	GRANT, REVOKE	Control user permissions
 TCL	Transaction Control Language	COMMIT, ROLLBACK, SAVEPOINT, BEGIN TRAN	Manage transactions
 
+1. DDL – Data Definition Language
+Purpose: Defines the structure/schema of the database.
+Command	Description
+CREATE	Creates new database objects like tables, views, etc.
+ALTER	Modifies an existing object (e.g., add a column to a table).
+DROP	Deletes database objects permanently.
+TRUNCATE	Removes all records from a table quickly without logging.
+RENAME	Renames a database object. (Supported in some RDBMSs)
+🔸 Example:
+CREATE TABLE Employees (
+  ID INT,
+  Name VARCHAR(50),
+  Salary DECIMAL(10,2)
+);
+________________________________________
+
+
+ 2. DML – Data Manipulation Language
+Purpose: Used to manage data within schema objects.
+Command	Description
+SELECT	Retrieves data from one or more tables.
+INSERT	Adds new records into a table.
+UPDATE	Modifies existing records.
+DELETE	Removes existing records from a table.
+🔸 Example:
+INSERT INTO Employees (ID, Name, Salary)
+VALUES (1, 'John Doe', 50000.00);
+________________________________________
+3. DCL – Data Control Language
+Purpose: Controls access and permissions to the database.
+Command	Description
+GRANT	Gives user access privileges.
+REVOKE	Removes user access privileges.
+🔸 Example:
+GRANT SELECT, INSERT ON Employees TO user1;
+________________________________________
+4. TCL – Transaction Control Language
+Purpose: Manages changes made by DML commands and ensures data integrity.
+Command	Description
+COMMIT	Saves all changes made during the transaction.
+ROLLBACK	Undoes changes made during the transaction.
+SAVEPOINT	Sets a point to which you can roll back later.
+BEGIN TRAN	Starts a transaction (specific to SQL Server).
+🔸 Example:
+BEGIN TRAN;
+UPDATE Employees SET Salary = Salary + 5000 WHERE ID = 1;
+COMMIT;
